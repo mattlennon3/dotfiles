@@ -1,0 +1,19 @@
+# Ignore all files
+*
+# Excluding anything beginning with .
+#!.**/* 
+# ^- whitelist / blacklist
+
+# Keep license
+#LICENSE
+
+# Ignored . files
+.bash_history
+
+# Ignored . folders
+.ssh/
+.cache/
+.config/
+.local/
+.minecraft/
+
