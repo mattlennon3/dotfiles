@@ -5,7 +5,7 @@
 # ^- whitelist / blacklist
 
 # Keep license
-#LICENSE
+LICENSE
 
 # Ignored . files
 .bash_history
@@ -15,5 +15,4 @@
 .cache/
 .config/
 .local/
-.minecraft/
 
