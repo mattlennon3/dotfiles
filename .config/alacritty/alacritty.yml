@@ -305,6 +305,7 @@ background_opacity: 0.0
 # section.
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
+  - { mouse: Right, action: Copy }
 
 mouse:
   # Click settings
