@@ -18,6 +18,9 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Volume
+local previousVolume = "80%"
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -351,19 +354,31 @@ globalkeys = gears.table.join(
 
     -- Volume # https://wiki.archlinux.org/index.php/Awesome#Media_Controls
     awful.key({ }, "XF86AudioLowerVolume", function ()
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "ERR NOT CONFIGURED YET",
-                         text = tostring(err) }) 
+        awful.util.spawn("amixer -D pulse sset Master 10%-")
+        -- naughty.notify({ preset = naughty.config.presets.critical,
+        --                  title = "ERR NOT CONFIGURED YET",
+        --                  text = tostring(err) }) 
                         end),
     awful.key({ }, "XF86AudioRaiseVolume", function ()
-        naughty.notify({ preset = naughty.config.presets.critical,
-                            title = "ERR NOT CONFIGURED YET",
-                            text = tostring(err) }) 
+        awful.util.spawn("amixer -D pulse sset Master 10%+")
+        -- naughty.notify({ preset = naughty.config.presets.critical,
+        --                     title = "ERR NOT CONFIGURED YET",
+        --                     text = tostring(err) }) 
                         end),
     awful.key({ }, "XF86AudioMute", function ()
-        naughty.notify({ preset = naughty.config.presets.critical,
-                            title = "ERR NOT CONFIGURED YET",
-                            text = tostring(err) }) 
+        local getVolumeCommand = '[[bash -c "amixer -D pulse sget Master | awk \'/\\[/{ print $5 }\' | sed -r s\'/(\\[)|(\\])//g\' | tail -1 "]]'
+        if(not previousVolume == "0%")
+        then
+            awful.spawn.easy_async(getVolumeCommand, function(stdout, stderr, reason, exit_code)
+                previousVolume = stdout
+                naughty.notify { text = "yo" }
+                naughty.notify { text = stdout }
+                awful.util.spawn("amixer -D pulse sset Master 0%")
+            end)
+        else 
+            local lastPrevVolume = previousVolume
+            awful.util.spawn("amixer -D pulse sset Master " .. lastPrevVolume)
+        end
                         end),
 
     --Brightness
