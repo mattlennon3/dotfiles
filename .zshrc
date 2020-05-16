@@ -101,3 +101,13 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
+
+
+# Solve problem with losing colours under tmux
+# https://gist.github.com/ivyleavedtoadflax/936a57c8bda090c68d7e1721d7ac7711
+export TERM="xterm-256color"
+alias tmux="TERM=screen-256color-bce tmux"
+# TODO: use pointer to set cursor location in vim
+# vim is broken when exiting
+
+
