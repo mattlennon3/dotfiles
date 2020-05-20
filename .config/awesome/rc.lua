@@ -18,8 +18,22 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+
 -- Volume
+-- https://github.com/streetturtle/awesome-wm-widgets/tree/master/volumebar-widget
+local volumebar_widget = require("awesome-wm-widgets.volumebar-widget.volumebar")
+-- https://github.com/horst3180/arc-icon-theme#installation
+-- https://github.com/streetturtle/awesome-wm-widgets/tree/master/volume-widget
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local previousVolume = "80%"
+volumebar_widget = volumebar_widget({
+    main_color = '#dedede',
+    mute_color = '#9e9e9e',
+    width = 80,
+    shape = 'rounded_bar', -- octogon, hexagon, powerline, etc
+    -- bar's height = wibar's height minus 2x margins
+    margins = 6
+})
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -221,6 +235,8 @@ awful.screen.connect_for_each_screen(function(s)
         },
             s.mytasklist, -- Middle widget
         { -- Right widgets
+            volume_widget({display_notification = true}),
+            volumebar_widget,
             BAT0,
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
@@ -354,31 +370,35 @@ globalkeys = gears.table.join(
 
     -- Volume # https://wiki.archlinux.org/index.php/Awesome#Media_Controls
     awful.key({ }, "XF86AudioLowerVolume", function ()
-        awful.util.spawn("amixer -D pulse sset Master 10%-")
+        -- awful.util.spawn("amixer -D pulse sset Master 10%-")
         -- naughty.notify({ preset = naughty.config.presets.critical,
         --                  title = "ERR NOT CONFIGURED YET",
         --                  text = tostring(err) }) 
+        volume_widget.lower()
+
                         end),
     awful.key({ }, "XF86AudioRaiseVolume", function ()
-        awful.util.spawn("amixer -D pulse sset Master 10%+")
+        volume_widget.raise()
+        -- awful.util.spawn("amixer -D pulse sset Master 10%+")
         -- naughty.notify({ preset = naughty.config.presets.critical,
         --                     title = "ERR NOT CONFIGURED YET",
         --                     text = tostring(err) }) 
                         end),
     awful.key({ }, "XF86AudioMute", function ()
-        local getVolumeCommand = '[[bash -c "amixer -D pulse sget Master | awk \'/\\[/{ print $5 }\' | sed -r s\'/(\\[)|(\\])//g\' | tail -1 "]]'
-        if(not previousVolume == "0%")
-        then
-            awful.spawn.easy_async(getVolumeCommand, function(stdout, stderr, reason, exit_code)
-                previousVolume = stdout
-                naughty.notify { text = "yo" }
-                naughty.notify { text = stdout }
-                awful.util.spawn("amixer -D pulse sset Master 0%")
-            end)
-        else 
-            local lastPrevVolume = previousVolume
-            awful.util.spawn("amixer -D pulse sset Master " .. lastPrevVolume)
-        end
+        volume_widget.toggle()
+        -- local getVolumeCommand = '[[bash -c "amixer -D pulse sget Master | awk \'/\\[/{ print $5 }\' | sed -r s\'/(\\[)|(\\])//g\' | tail -1 "]]'
+        -- if(not previousVolume == "0%")
+        -- then
+        --     awful.spawn.easy_async(getVolumeCommand, function(stdout, stderr, reason, exit_code)
+        --         previousVolume = stdout
+        --         naughty.notify { text = "yo" }
+        --         naughty.notify { text = stdout }
+        --         awful.util.spawn("amixer -D pulse sset Master 0%")
+        --     end)
+        -- else 
+        --     local lastPrevVolume = previousVolume
+        --     awful.util.spawn("amixer -D pulse sset Master " .. lastPrevVolume)
+        -- end
                         end),
 
     --Brightness
