@@ -195,8 +195,65 @@ awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
 
-    -- Each screen has its own tag table.
-    awful.tag({ "Comms", "Code", "Web", "Web4", "WebChill", "Games" }, s, awful.layout.layouts[1])
+    -- The default ratio for the master screen to client screens
+    local local_master_width_factor = 0.65
+    local local_gap = 5
+
+    awful.tag.add("Comms", {
+        screen = s,
+        layout = awful.layout.suit.fair,
+        selected = false,
+        gap = local_gap,
+        gap_single_client = false,
+        master_width_factor = local_master_width_factor,
+        master_fill_policy = "expand"
+    })
+    awful.tag.add("Code", {
+        screen = s,
+        layout = awful.layout.suit.tile,
+        selected = false,
+        gap = local_gap,
+        gap_single_client = false,
+        master_width_factor = local_master_width_factor,
+        master_fill_policy = "expand"
+    })
+    awful.tag.add("Web", {
+        screen = s,
+        layout = awful.layout.suit.tile,
+        selected = true,
+        gap = local_gap,
+        gap_single_client = false,
+        master_width_factor = local_master_width_factor,
+        master_fill_policy = "expand"
+    })
+    awful.tag.add("Web4", {
+        screen = s,
+        layout = awful.layout.suit.tile,
+        selected = false,
+        gap = local_gap,
+        gap_single_client = false,
+        master_width_factor = local_master_width_factor,
+        master_fill_policy = "expand"
+    })
+    awful.tag.add("WebChill", {
+        screen = s,
+        layout = awful.layout.suit.tile,
+        selected = false,
+        gap = local_gap,
+        gap_single_client = false,
+        master_width_factor = local_master_width_factor,
+        master_fill_policy = "expand"
+    })
+    awful.tag.add("Games", {
+        screen = s,
+        layout = awful.layout.suit.tile,
+        selected = false,
+        gap = local_gap,
+        gap_single_client = false,
+        master_width_factor = local_master_width_factor,
+        master_fill_policy = "expand"
+    })
+
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -296,12 +353,26 @@ globalkeys = gears.table.join(
               {description = "jump to urgent client", group = "client"}),
     awful.key({ altKey,           }, "Tab",
         function ()
-            awful.client.focus.history.previous()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(-1)
             if client.focus then
                 client.focus:raise()
             end
         end,
-        {description = "go back", group = "client"}),
+        {description = "jump to urgent client", group = "client"}),),
+          
+    awful.key({ altKey, "Shift"   }, "Tab",
+        function ()
+            -- awful.client.focus.history.previous()
+            awful.client.focus.byidx(1)
+            if client.focus then
+                client.focus:raise()
+            end
+        end),
+
+
+
+
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () 
@@ -346,8 +417,8 @@ globalkeys = gears.table.join(
     -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
     --           {description = "run prompt", group = "launcher"}),
 
-    awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
-              {description = "dmenu run prompt", group = "launcher"}),
+    awful.key({ modkey },            "r",     function () awful.util.spawn("sh dmenu_custom.sh") end,
+              {description = "dmenu run lightweight prompt", group = "launcher"}),
 
     -- awful.key({ modkey }, "x",
     --           function ()
