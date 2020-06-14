@@ -18,6 +18,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
+-- Reduce notification size
+naughty.config.defaults['icon_size'] = 150
 
 -- Volume
 -- https://github.com/streetturtle/awesome-wm-widgets/tree/master/volumebar-widget
@@ -359,7 +361,7 @@ globalkeys = gears.table.join(
                 client.focus:raise()
             end
         end,
-        {description = "jump to urgent client", group = "client"}),),
+        {description = "jump to urgent client", group = "client"}),
           
     awful.key({ altKey, "Shift"   }, "Tab",
         function ()
@@ -597,6 +599,28 @@ root.keys(globalkeys)
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
+    -- https://awesomewm.org/doc/api/libraries/awful.rules.html
+    { rule_any = { class = "[Cc]laws%-mail"},
+        properties = { tag = "Comms" }
+    },
+    { rule = { instance = "discord" },
+        properties = { tag = "Comms" }
+    },
+    { rule = { instance = "riot" },
+        properties = { tag = "Comms" }
+    },
+    { rule = { instance = "spotify" },
+        properties = { tag = "Comms" }
+    },
+    { rule = { instance = "code" },
+        properties = { tag = "Code", switchtotag = true }
+    },
+    { rule = { instance = "minecraft-launcher" },
+        properties = { tag = "Games" }
+    },
+
+
+
     -- All clients will match this rule.
     { rule = { },
       properties = { border_width = beautiful.border_width,
