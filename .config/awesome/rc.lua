@@ -66,7 +66,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-beautiful.wallpaper = "/home/matt/pictures/rocket-launch.jpg"
+beautiful.wallpaper = "/home/matt/pictures/mount-everest-himalayan-mountains-1920×1080.jpg"
 --beautiful.init("/home/matt/.config/awesome/theme.lua")
 --for s = 1, screen.count() do 
 --	gears.wallpaper.maximized(beautiful.wallpaper, s, true)
@@ -131,7 +131,11 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
--- {{{ Wibar
+-- Wibar settings
+beautiful.wibar_height = 20
+beautiful.font = "JetBrains Mono Medium 12"
+
+
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
@@ -730,6 +734,11 @@ client.connect_signal("request::titlebars", function(c)
         layout = wibox.layout.align.horizontal
     }
 end)
+
+-- hotkeys menu looks
+-- beautiful.hotkeys.shape
+-- https://awesomewm.org/doc/api/libraries/awful.hotkeys_popup.widget.html
+-- https://awesomewm.org/doc/api/libraries/gears.shape.html#
 
 -- Enable sloppy focus, so that focus follows mouse.
 -- client.connect_signal("mouse::enter", function(c)
