@@ -15,4 +15,6 @@ LICENSE
 .cache/
 .config/
 .local/
+.PrusaSlicer/cache/
+.PrusaSlicer/snapshots/
 
