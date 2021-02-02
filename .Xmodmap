@@ -1,0 +1,8 @@
+
+! use "xmodmap -pke" to get the list of keycode assignments. For some reason you need to +8 to the keycode output of the button to get the right keycode
+
+keycode 198 = XF86HomePage
+keycode 199 = XF86Game
+keycode 200 = XF86Game
+keycode 201 = XF86Game
+

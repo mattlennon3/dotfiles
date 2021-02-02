@@ -12,9 +12,10 @@ LICENSE
 
 # Ignored . folders
 .ssh/
+.gnupg/
 .cache/
 .config/
 .local/
-.PrusaSlicer/cache/
-.PrusaSlicer/snapshots/
+.config/PrusaSlicer/cache/
+.config/PrusaSlicer/snapshots/
 
