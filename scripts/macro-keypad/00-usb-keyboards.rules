@@ -1,0 +1,2 @@
+ACTION=="add", ATTRS{idVendor}=="0665", ATTRS{idProduct}=="6000", RUN+="/home/matt/scripts/macro-keypad/kbd_udev.sh", OWNER="matt"
+

@@ -1,2 +1,16 @@
+## Lightdm runs this after login
+
 export ML_DEVICE="desktop"
+
+# Put X vars into files to read later (in /tmp/x-vars/)
+bash $HOME/scripts/helpers/save-x-vars.sh
+
+# https://wiki.archlinux.org/index.php/Display_Power_Management_Signaling
+xset s 600 600
+
+# Enable lockscreen
+xss-lock xsecurelock &
+
+## Macro keyboard
+xmodmap $HOME/.Xmodmap
 
