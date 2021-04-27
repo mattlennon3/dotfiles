@@ -8,9 +8,10 @@ alias ltr="echo 'Add -r to reverse list'"
 
 # cd aliases
 alias ..="cd .."
-alias cdg="cd $HOME/git/"
+alias cdg="cd $HOME/git"
 alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
+alias cdac="cd $HOME/git/my-dotfiles/awesome-config"
 
 # Safer rm
 alias rm="rm -i"
@@ -38,6 +39,9 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 # https://www.youtube.com/watch?v=tBoLDpTWVOM
 # https://www.atlassian.com/git/tutorials/dotfiles
 # ------------------------------------------------------------
+
+# Awesome config
+alias uac="(cd $HOME/git/my-dotfiles/awesome-config; sh ./update_awesome_config.sh)"
 
 # git aliases
 alias gs="git status"

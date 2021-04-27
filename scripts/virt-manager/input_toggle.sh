@@ -9,9 +9,11 @@ then
         grep -A 1 -E "vendor id='0x0665'" | # Check if the vendor ID exists and get the next line
         grep -q -E "product id='0x6000'" # If the product id also matches, keyboard found
     then
-        bash /home/matt/scripts/virt-manager/input_detach.sh
-    else 
-        bash /home/matt/scripts/virt-manager/input_attach.sh
+        ## Awesome passes arg to this script (supresses notifications)
+        bash /home/matt/scripts/virt-manager/input_detach.sh $1
+    else
+        ## Awesome passes arg to this script (supresses notifications)
+        bash /home/matt/scripts/virt-manager/input_attach.sh $1
     fi
 
 else

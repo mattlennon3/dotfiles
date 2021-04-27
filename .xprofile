@@ -2,6 +2,9 @@
 
 export ML_DEVICE="desktop"
 
+# https://unix.stackexchange.com/q/316765
+PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
 # Put X vars into files to read later (in /tmp/x-vars/)
 bash $HOME/scripts/helpers/save-x-vars.sh
 
@@ -10,6 +13,9 @@ xset s 600 600
 
 # Enable lockscreen
 xss-lock xsecurelock &
+
+# Numlock on
+numlockx &
 
 ## Macro keyboard
 xmodmap $HOME/.Xmodmap
