@@ -57,3 +57,12 @@ alias vcn="nordvpn connect netherlands"
 alias vcf="nordvpn connect france"
 alias vcs="nordvpn connect spain"
 alias vcusa="nordvpn connect united_states"
+
+# Man/Command Helpers
+alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
+
+
+
+
+
+
