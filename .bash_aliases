@@ -41,7 +41,8 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 # ------------------------------------------------------------
 
 # Awesome config
-alias uac="(cd $HOME/git/my-dotfiles/awesome-config; sh ./update_awesome_config.sh)"
+alias uac="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./update_awesome_config.sh)"
+alias deva="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./develop-awesome.sh)"
 
 # git aliases
 alias gs="git status"
@@ -61,7 +62,11 @@ alias vcusa="nordvpn connect united_states"
 # Man/Command Helpers
 alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
 
+# File exporer (gui)
+alias open="thunar"
 
+# Zettel
+alias review="$HOME/scripts/productivity/weekly-review.sh"
 
 
 
