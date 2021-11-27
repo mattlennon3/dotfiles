@@ -12,6 +12,7 @@ alias cdg="cd $HOME/git"
 alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
 alias cdac="cd $HOME/git/my-dotfiles/awesome-config"
+alias cdssh="cd $HOME/.ssh"
 
 # Safer rm
 alias rm="rm -i"
@@ -24,8 +25,9 @@ alias j="journalctl -xe"
 alias vm="virsh --connect quemu:///system"
 alias launch_w10="sudo bash $HOME/scripts/virt-manager/launch_w10.sh"
 
-# Display / Window Management
+# Scripts
 alias mkscript="${HOME}/scripts/helpers/new_script.sh"
+alias edal="$EDITOR $HOME/.bash_aliases"
 
 # ------------------------------------------------------------
 # Dotfiles git tools
@@ -67,6 +69,7 @@ alias open="thunar"
 
 # Zettel
 alias review="$HOME/scripts/productivity/weekly-review.sh"
+alias pushzettel="$HOME/scripts/productivity/push-zettel.sh"
 
 
 

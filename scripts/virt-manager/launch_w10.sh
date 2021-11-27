@@ -9,10 +9,10 @@ then
 fi
 
 # Make sure drive is mounted
-if [ ! -d /run/media/matt/linux-trailer/ ]
+if [ ! -d /run/media/matt/TET/ ]
 then
-  echo "mounting linux-trailer"
-  su -c 'udisksctl mount -b /dev/sdc2' - matt
+  echo "mounting TET"
+  su -c 'udisksctl mount -b /dev/sda' - matt
   sleep 3
 fi
 
