@@ -13,6 +13,7 @@ alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
 alias cdac="cd $HOME/git/my-dotfiles/awesome-config"
 alias cdssh="cd $HOME/.ssh"
+alias cdz="cd $HOME/git/notes/ml-zettel"
 
 # Safer rm
 alias rm="rm -i"
@@ -68,9 +69,9 @@ alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
 alias open="thunar"
 
 # Zettel
-alias review="$HOME/scripts/productivity/weekly-review.sh"
-alias pushzettel="$HOME/scripts/productivity/push-zettel.sh"
+alias review="$HOME/scripts/zettel/weekly-review/weekly-review.sh"
 
-
-
+# API outputs
+alias tram="python $HOME/git/metrolink-next-tram/metrolink.py"
+alias tramw="watch -n 15 python $HOME/git/metrolink-next-tram/metrolink.py"
 
