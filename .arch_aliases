@@ -1,0 +1,11 @@
+# File exporer (gui)
+alias open="thunar"
+
+# Virtual Machines
+alias vm="virsh --connect quemu:///system"
+alias launch_w10="sudo bash $HOME/scripts/virt-manager/launch_w10.sh"
+
+# Awesome config
+alias uac="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./update_awesome_config.sh)"
+alias deva="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./develop-awesome.sh)"
+

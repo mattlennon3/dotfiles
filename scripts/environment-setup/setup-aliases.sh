@@ -16,6 +16,8 @@ fi
 ## TODO: In future, prompt for "do you want.. VPN aliases, virtual machine aliases etc". 
 # Helpful to avoid these for work and keep things organised
 
+## TODO: Sym link mac and linux alias files too
+
 # Fetch my alias file from github
 
 curl $ALIAS_LOCATION >> /tmp/.bash_aliases &> /dev/null

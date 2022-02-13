@@ -1,3 +1,8 @@
+## Setup ##
+
+IS_MACOS=$(sw_vers | grep macOS 2> /dev/null)
+IS_ARCH_LINUX=$(uname -a | grep "m-arch" 2> /dev/null)
+
 ##### Aliases #####
 # ls aliases
 alias l='ls -oaAthF | head && echo "..."' # short output of 10 recent items
@@ -16,15 +21,7 @@ alias cdac="cd $HOME/git/my-dotfiles/awesome-config"
 # Safer rm
 alias rm="rm -i"
 
-# System
-alias sys="systemctl"
-alias j="journalctl -xe"
-
-# Virtual Machines
-alias vm="virsh --connect quemu:///system"
-alias launch_w10="sudo bash $HOME/scripts/virt-manager/launch_w10.sh"
-
-# Display / Window Management
+# Productivity / Code utils
 alias mkscript="${HOME}/scripts/helpers/new_script.sh"
 
 # ------------------------------------------------------------
@@ -40,9 +37,7 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 # https://www.atlassian.com/git/tutorials/dotfiles
 # ------------------------------------------------------------
 
-# Awesome config
-alias uac="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./update_awesome_config.sh)"
-alias deva="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./develop-awesome.sh)"
+# Display / Window Management
 
 # git aliases
 alias gs="git status"
@@ -62,11 +57,31 @@ alias vcusa="nordvpn connect united_states"
 # Man/Command Helpers
 alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
 
-# File exporer (gui)
-alias open="thunar"
-
 # Zettel
 alias review="$HOME/scripts/productivity/weekly-review.sh"
+
+#### Mac and Linux specific
+if [ "$IS_MACOS" ]
+then
+    if [ -f ~/.mac_aliases ]
+    then
+        . ~/.mac_aliases
+    fi
+else 
+    #### General Linux Aliases
+    # System
+    alias sys="systemctl"
+    alias j="journalctl -xe"
+
+    ## Distro-specific
+    if [ "$IS_ARCH_LINUX" ]
+    then
+        if [ -f ~/.arch_aliases ]
+        then
+            . ~/.arch_aliases
+        fi
+    fi
+fi
 
 
 
