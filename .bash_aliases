@@ -73,5 +73,5 @@ alias review="$HOME/scripts/zettel/weekly-review/weekly-review.sh"
 
 # API outputs
 alias tram="python $HOME/git/metrolink-next-tram/metrolink.py"
-alias tramw="watch -n 15 python $HOME/git/metrolink-next-tram/metrolink.py"
+alias trams="watch -n 15 python $HOME/git/metrolink-next-tram/metrolink.py"
 
