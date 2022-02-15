@@ -11,7 +11,7 @@ alias ..="cd .."
 alias cdg="cd $HOME/git"
 alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
-alias cdac="cd $HOME/git/my-dotfiles/awesome-config"
+alias cdac="cd $HOME/git/dots/awesome-config"
 alias cdssh="cd $HOME/.ssh"
 alias cdz="cd $HOME/git/notes/ml-zettel"
 
@@ -32,7 +32,7 @@ alias edal="$EDITOR $HOME/.bash_aliases"
 
 # ------------------------------------------------------------
 # Dotfiles git tools
-alias dotf="/usr/bin/git --git-dir=$HOME/git/my-dotfiles/dotfiles/ --work-tree=$HOME $*"
+alias dotf="/usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME $*"
 alias ds="(cd $HOME; dotf status -u)"
 alias dotlist="dotf ls-tree --full-tree --name-only -r HEAD"
 alias dotdiff="dotf difftool"
@@ -44,8 +44,8 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 # ------------------------------------------------------------
 
 # Awesome config
-alias uac="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./update_awesome_config.sh)"
-alias deva="(cd $HOME/git/my-dotfiles/awesome-config/scripts; sh ./develop-awesome.sh)"
+alias uac="(cd $HOME/git/dots/awesome-config/scripts; sh ./update_awesome_config.sh)"
+alias deva="(cd $HOME/git/dots/awesome-config/scripts; sh ./develop-awesome.sh)"
 
 # git aliases
 alias gs="git status"
