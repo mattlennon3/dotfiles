@@ -1,3 +1,8 @@
+## Setup ##
+
+IS_MACOS=$(command -v sw_vers && sw_vers | grep macOS 2> /dev/null)
+IS_ARCH_LINUX=$(uname -a | grep "m-arch" 2> /dev/null)
+
 ##### Aliases #####
 # ls aliases
 alias l='ls -oaAthF | head && echo "..."' # short output of 10 recent items
@@ -11,22 +16,13 @@ alias ..="cd .."
 alias cdg="cd $HOME/git"
 alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
-alias cdac="cd $HOME/git/dots/awesome-config"
 alias cdssh="cd $HOME/.ssh"
 alias cdz="cd $HOME/git/notes/ml-zettel"
 
 # Safer rm
 alias rm="rm -i"
 
-# System
-alias sys="systemctl"
-alias j="journalctl -xe"
-
-# Virtual Machines
-alias vm="virsh --connect quemu:///system"
-alias launch_w10="sudo bash $HOME/scripts/virt-manager/launch_w10.sh"
-
-# Scripts
+# Productivity / Code utils
 alias mkscript="${HOME}/scripts/helpers/new_script.sh"
 alias edal="$EDITOR $HOME/.bash_aliases"
 
@@ -42,10 +38,6 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 # https://www.youtube.com/watch?v=tBoLDpTWVOM
 # https://www.atlassian.com/git/tutorials/dotfiles
 # ------------------------------------------------------------
-
-# Awesome config
-alias uac="(cd $HOME/git/dots/awesome-config/scripts; sh ./update_awesome_config.sh)"
-alias deva="(cd $HOME/git/dots/awesome-config/scripts; sh ./develop-awesome.sh)"
 
 # git aliases
 alias gs="git status"
@@ -65,13 +57,33 @@ alias vcusa="nordvpn connect united_states"
 # Man/Command Helpers
 alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
 
-# File exporer (gui)
-alias open="thunar"
-
 # Zettel
 alias review="$HOME/scripts/zettel/weekly-review/weekly-review.sh"
 
 # API outputs
 alias tram="python $HOME/git/metrolink-next-tram/metrolink.py"
 alias trams="watch -n 15 python $HOME/git/metrolink-next-tram/metrolink.py"
+
+#### Mac and Linux specific
+if [ "$IS_MACOS" ]
+then
+    if [ -f ~/.mac_aliases ]
+    then
+        . ~/.mac_aliases
+    fi
+else 
+    #### General Linux Aliases
+    # System
+    alias sys="systemctl"
+    alias j="journalctl -xe"
+
+    ## Distro-specific
+    if [ "$IS_ARCH_LINUX" ]
+    then
+        if [ -f ~/.arch_aliases ]
+        then
+            . ~/.arch_aliases
+        fi
+    fi
+fi
 
