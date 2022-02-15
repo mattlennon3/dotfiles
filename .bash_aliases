@@ -16,7 +16,8 @@ alias ..="cd .."
 alias cdg="cd $HOME/git"
 alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
-alias cdac="cd $HOME/git/my-dotfiles/awesome-config"
+alias cdssh="cd $HOME/.ssh"
+alias cdz="cd $HOME/git/notes/ml-zettel"
 
 # Safer rm
 alias rm="rm -i"
@@ -26,7 +27,7 @@ alias mkscript="${HOME}/scripts/helpers/new_script.sh"
 
 # ------------------------------------------------------------
 # Dotfiles git tools
-alias dotf="/usr/bin/git --git-dir=$HOME/git/my-dotfiles/dotfiles/ --work-tree=$HOME $*"
+alias dotf="/usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME $*"
 alias ds="(cd $HOME; dotf status -u)"
 alias dotlist="dotf ls-tree --full-tree --name-only -r HEAD"
 alias dotdiff="dotf difftool"
@@ -36,8 +37,6 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 # https://www.youtube.com/watch?v=tBoLDpTWVOM
 # https://www.atlassian.com/git/tutorials/dotfiles
 # ------------------------------------------------------------
-
-# Display / Window Management
 
 # git aliases
 alias gs="git status"
