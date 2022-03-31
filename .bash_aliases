@@ -17,7 +17,7 @@ alias cdg="cd $HOME/git"
 alias cdr="cd $HOME/git/rust"
 alias cds="cd $HOME/scripts"
 alias cdssh="cd $HOME/.ssh"
-alias cdz="cd $HOME/git/notes/ml-zettel"
+alias cdz="cd $HOME/vaults/personal/ml-zettel"
 
 # Safer rm
 alias rm="rm -i"
@@ -41,8 +41,10 @@ alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
 
 # git aliases
 alias gs="git status"
-alias gp="git pull"
+#alias gp="git pull"
 alias undocommit="git reset --soft HEAD~1"
+# alias gc="git checkout"
+# alias gf="git fetch"
 
 # VPN
 alias v="nordvpn status"

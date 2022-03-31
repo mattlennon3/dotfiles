@@ -1,0 +1,14 @@
+
+MANA_DIRECTORY="$HOME/git/mana"
+APP_DIRECTORY="$HOME/git/mana/mobile-app"
+
+# cd Aliases
+alias cdm="cd $MANA_DIRECTORY"
+alias cdma="cd $APP_DIRECTORY"
+alias cdmw="cd $MANA_DIRECTORY/ManaWeb"
+
+# Quick builds
+alias uma="(cd $APP_DIRECTORY; yarn install; (cd ios; pod install))"
+alias awsmfa="/Users/matt-dev/git/mana/mana-infra/scripts/aws-mfa.sh matt.lennon"
+alias db-connect="/Users/matt-dev/git/mana/mana-infra/scripts/db-connect.sh"
+
