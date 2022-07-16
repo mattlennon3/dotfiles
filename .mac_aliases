@@ -1,6 +1,6 @@
 
-MANA_DIRECTORY="$HOME/git/mana"
-APP_DIRECTORY="$HOME/git/mana/mobile-app"
+export MANA_DIRECTORY="$HOME/git/mana"
+export APP_DIRECTORY="$HOME/git/mana/mobile-app"
 
 # cd Aliases
 alias cdm="cd $MANA_DIRECTORY"
@@ -9,6 +9,17 @@ alias cdmw="cd $MANA_DIRECTORY/ManaWeb"
 
 # Quick builds
 alias uma="(cd $APP_DIRECTORY; yarn install; (cd ios; pod install))"
+alias ddd="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
+
+# Mana AWS
 alias awsmfa="/Users/matt-dev/git/mana/mana-infra/scripts/aws-mfa.sh matt.lennon"
 alias db-connect="/Users/matt-dev/git/mana/mana-infra/scripts/db-connect.sh"
+
+
+# Default browser
+alias dbf="osascript $HOME/scripts/mac-os-utils/switch-browser/switch-browser.scpt 'firefox'"
+alias dbff=dbf
+alias dbfd="osascript $HOME/scripts/mac-os-utils/switch-browser/switch-browser.scpt 'firefoxdeveloperedition'"
+alias dbw=dbfd
+
 
