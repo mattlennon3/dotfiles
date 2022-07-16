@@ -34,6 +34,7 @@ alias dotlist="dotf ls-tree --full-tree --name-only -r HEAD"
 alias dotdiff="dotf difftool"
 alias dtn="(cd $HOME; dotf config --local status.showUntrackedFiles no)"
 alias dty="(cd $HOME; dotf config --local status.showUntrackedFiles all)"
+alias dotfaa=""
 # Dotfile setup info/sources
 # https://www.youtube.com/watch?v=tBoLDpTWVOM
 # https://www.atlassian.com/git/tutorials/dotfiles
