@@ -5,7 +5,7 @@ IS_ARCH_LINUX=$(uname -a | grep "m-arch" 2> /dev/null)
 
 ##### Aliases #####
 # ls aliases
-alias l='ls -oaAthF | head && echo "..."' # short output of 10 recent items
+alias l='ls -oAthF | head && echo "..."' # short output of 10 recent items
 alias ll="ls -alhF"
 alias la="ll"
 alias lt="ll -t"
