@@ -25,6 +25,7 @@ alias rm="rm -i"
 # Productivity / Code utils
 alias mkscript="${HOME}/scripts/helpers/new_script.sh"
 alias edal="$EDITOR $HOME/.bash_aliases"
+alias realias="source $HOME/.bash_aliases"
 
 # ------------------------------------------------------------
 # Dotfiles git tools
@@ -62,6 +63,7 @@ alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
 
 # Zettel
 alias review="$HOME/scripts/zettel/weekly-review/weekly-review.sh"
+alias cdwr="cd $HOME/git/ts-weekly-review"
 
 # API outputs
 alias tram="python $HOME/git/metrolink-next-tram/metrolink.py"
