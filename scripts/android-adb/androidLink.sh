@@ -11,8 +11,8 @@
 
 CONNECTED_STATE="disconnected"
 
-# REPO_DIR="$PWD"
-REPO_DIR="/Users/matt-dev/git/mana/mobile-app"
+REPO_DIR="$PWD"
+# REPO_DIR="/Users/matt-dev/git/mana/mobile-app"
 
 start_metro() {
   osascript -e "tell app \"Terminal\" to do script \"(cd $REPO_DIR; yarn start); exit 0\""
@@ -54,9 +54,11 @@ main() {
       if [ -n "$ADB_CONNECTION" ]; then
         echo "Port: ${ADB_CONNECTION}"
         # Restart metro so it picks up the new port connection
-        kill_metro
+        ### I initially thought you had to restart the metro server if the android device was disconnected
+        # kill_metro 
         sleep 3
-        start_metro
+        ### I initially thought you had to restart the metro server if the android device was disconnected
+        # start_metro 
         sleep 10
       fi
       CONNECTED_STATE="connected"
@@ -79,5 +81,6 @@ while true
 do
   clear # TODO: Make less "blinky" when running (more like the watch command)
   main
+  # echo $PWD
   sleep 2
 done
