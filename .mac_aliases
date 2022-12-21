@@ -1,19 +1,24 @@
 
-export MANA_DIRECTORY="$HOME/git/mana"
-export APP_DIRECTORY="$HOME/git/mana/mobile-app"
+export CONVERGE_DIRECTORY="$HOME/git/converge"
+export CONVERGE_APP="$HOME/git/converge/mobile-app"
 
 # cd Aliases
-alias cdm="cd $MANA_DIRECTORY"
-alias cdma="cd $APP_DIRECTORY"
-alias cdmw="cd $MANA_DIRECTORY/ManaWeb"
+alias cdc="cd $CONVERGE_DIRECTORY"
+alias cdma="cd $CONVERGE_APP"
 
 # Quick builds
-alias uma="(cd $APP_DIRECTORY; yarn install; (cd ios; pod install))"
+alias uma="(cd $CONVERGE_APP; npm install; (cd ios; pod install))"
 alias ddd="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
+alias sde=". $HOME/git/converge/deploy/set-dev-env.sh"
+alias mks=". $HOME/git/converge/keystore.sh"
+
+# Call sde and mks so I don't have to on every new terminal..
+sde
+mks
 
 # Mana AWS
-alias awsmfa="/Users/matt-dev/git/mana/mana-infra/scripts/aws-mfa.sh matt.lennon"
-alias db-connect="/Users/matt-dev/git/mana/mana-infra/scripts/db-connect.sh"
+# alias awsmfa="/Users/matt-dev/git/mana/mana-infra/scripts/aws-mfa.sh matt.lennon"
+# alias db-connect="/Users/matt-dev/git/mana/mana-infra/scripts/db-connect.sh"
 
 
 # Default browser
@@ -21,5 +26,11 @@ alias dbf="osascript $HOME/scripts/mac-os-utils/switch-browser/switch-browser.sc
 alias dbff=dbf
 alias dbfd="osascript $HOME/scripts/mac-os-utils/switch-browser/switch-browser.scpt 'firefoxdeveloperedition'"
 alias dbw=dbfd
+
+# React Native / Simulator
+alias androidLink="$HOME/scripts/android-adb/androidLink.sh"
+alias droid="npm run android"
+alias adebug="adb shell input keyevent 82"
+
 
 
