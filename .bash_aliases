@@ -29,7 +29,27 @@ alias realias="source $HOME/.bash_aliases"
 
 # ------------------------------------------------------------
 # Dotfiles git tools
-alias dotf="/usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME $*"
+dotf() {
+  /usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME "$@"
+}
+dotlisto () {
+  if [[ $PWD != $HOME ]]; then
+    dotf ls-files --others
+  else
+    echo "Can't run in home directory!"
+  fi
+}
+# Wrap git so if I run it in $HOME it aliases to dotf
+#git () {
+#  if [ "$PWD" == "$HOME" ]; then
+#    echo "Woops, git ran in \$HOME directory, running in dotfile context"
+#    dotf "$@"
+#  else
+#    /usr/bin/git "$@"
+#  fi
+#}
+# This no longer works on my mac. ChatGPT guided me to write the function above. Crazy times
+#alias dotf="/usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME $*"
 alias ds="(cd $HOME; dotf status -u)"
 alias dotlist="dotf ls-tree --full-tree --name-only -r HEAD"
 alias dotdiff="dotf difftool"
