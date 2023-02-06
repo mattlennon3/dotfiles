@@ -29,7 +29,11 @@ alias realias="source $HOME/.bash_aliases"
 
 # ------------------------------------------------------------
 # Dotfiles git tools
-alias dotf="/usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME $*"
+dotf() {
+  /usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME "$@"
+}
+# This no longer works on my mac. ChatGPT guided me to write the function above. Crazy times
+#alias dotf="/usr/bin/git --git-dir=$HOME/git/dots/my-symlinked-dotfiles/ --work-tree=$HOME $*"
 alias ds="(cd $HOME; dotf status -u)"
 alias dotlist="dotf ls-tree --full-tree --name-only -r HEAD"
 alias dotdiff="dotf difftool"

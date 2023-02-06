@@ -131,7 +131,9 @@ java11
 
 # NVM (node version manager)
 export NVM_DIR="${HOME}/.nvm"
-source $(brew --prefix nvm)/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#source $(brew --prefix nvm)/nvm.sh # old nvm through brew (not recommended by nvm)
 
 # NVM switcher, THIS SLOWS DOWN ALL CD COMMANDS
 if [ -f ~/.nvm_switcher ]
