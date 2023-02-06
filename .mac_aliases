@@ -5,7 +5,6 @@ export CONVERGE_APP="$HOME/git/converge/mobile-app"
 # cd Aliases
 alias cdc="cd $CONVERGE_DIRECTORY"
 alias cdma="cd $CONVERGE_APP"
-alias cddf="cd $HOME/Applications/Wineskin/Dwarf-Fortress.app/Contents/SharedSupport/prefix/drive_c/Program\ Files/Dwarf\ Fortress/prefs"
 
 # Quick builds
 alias uma="(cd $CONVERGE_APP; npm install; (cd ios; pod install))"
