@@ -150,4 +150,8 @@ export PATH="/opt/homebrew/opt/qt@5/bin:$PATH"
 # Deno
 export PATH="$HOME/.deno/bin:$PATH"
 
+# Cargo/Rust 
+# (You can run $HOME/.cargo/env instead incase of issues)
+export PATH="$HOME/.cargo/bin:$PATH"
+
 
