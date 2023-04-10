@@ -67,7 +67,8 @@
 
   // File is not empty, so we don't need to populate it (or risk overwriting)
   if (isEmpty == "0") {
-    returnToBTT(isEmpty);
+    const resultText = `Created and opened ${fullPath} WITHOUT template`;
+    returnToBTT(resultText);
     return;
   }
 
@@ -104,7 +105,9 @@
 
   let replaceResult = await runShellScript(replaceWrapper);
 
-  returnToBTT(isEmpty);
+  const resultText = `Created and opened ${fullPath} WITH template`;
+
+  returnToBTT(resultText);
 })();
 
 
