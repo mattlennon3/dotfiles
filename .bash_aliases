@@ -85,13 +85,23 @@ alias cheat='function cheat() { curl cheat.sh/$*; }; cheat'
 alias review="$HOME/scripts/zettel/weekly-review/weekly-review.sh"
 alias cdwr="cd $HOME/git/ts-weekly-review"
 
+# Work shortcuts
+alias checkapp="npm i; npm run typecheck; npm run test"
+
 # API outputs
 alias tram="python $HOME/git/metrolink-next-tram/metrolink.py"
 alias trams="watch -n 15 python $HOME/git/metrolink-next-tram/metrolink.py"
 
+# Random Stuff
+# no-more-secrets
+alias nms="nms -a -f green"
+
 #### Mac and Linux specific
 if [ "$IS_MACOS" ]
 then
+    # CD Aliases
+	alias cdmc="cd $HOME/Library/Application\ Support/minecraft"
+	
     if [ -f ~/.mac_aliases ]
     then
         . ~/.mac_aliases

@@ -5,8 +5,8 @@
 # This script automates the process of connecting to an android device and copying the zettel vault from within
 #
 
-VAULT_MOBILE_DIR="/storage/emulated/0/git/Zettel-Mob/Zettel-Mob/"
-VAULT_MAC_UNSORTED_MOB_DIR="/Users/matt-dev/vaults/personal/ml-zettel/Unsorted-Mobile"
+VAULT_MOBILE_DIR="/storage/emulated/0/Vaults/ml-zettel/"
+VAULT_MAC_UNSORTED_MOB_DIR="/Users/m-len/vaults/personal/ml-zettel/Unsorted-Mobile"
 
 main() {
   # Find what state the phone connection is in

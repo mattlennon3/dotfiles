@@ -1,4 +1,8 @@
 
+# Mac System Dirs
+export cdicl="cd \"$HOME/Library/Mobile Documents/com~apple~CloudDocs/\""
+
+# Converge
 export CONVERGE_DIRECTORY="$HOME/git/converge"
 export CONVERGE_APP="$HOME/git/converge/mobile-app"
 
@@ -12,8 +16,11 @@ alias ddd="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
 alias sde=". $HOME/git/converge/deploy/set-dev-env.sh"
 alias mks=". $HOME/git/converge/keystore.sh"
 
+# Play a sound (for command completions)"
+alias alert="afplay /System/Library/Sounds/Ping.aiff"
+
 # Call sde and mks so I don't have to on every new terminal..
-sde
+#sde
 mks
 
 # Mana AWS
@@ -31,6 +38,8 @@ alias dbw=dbfd
 alias androidLink="$HOME/scripts/android-adb/androidLink.sh"
 alias droid="npm run android"
 alias adebug="adb shell input keyevent 82"
+alias check="npm run test; npm run typecheck; npm run lint; alert; $*"
+
 
 
 
