@@ -161,3 +161,10 @@ export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 
+
+# bun completions
+[ -s "/Users/m-len/.bun/_bun" ] && source "/Users/m-len/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
