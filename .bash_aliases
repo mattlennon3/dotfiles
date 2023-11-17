@@ -21,6 +21,8 @@ alias cdz="cd $HOME/vaults/personal/ml-zettel"
 
 # Safer rm
 alias rm="rm -i"
+# Rebind nvim to hx as I'll keep forgetting
+alias nvim="hx"
 
 # Productivity / Code utils
 alias mkscript="${HOME}/scripts/helpers/new_script.sh"
