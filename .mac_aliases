@@ -3,30 +3,19 @@
 export cdicl="cd \"$HOME/Library/Mobile Documents/com~apple~CloudDocs/\""
 
 # Converge
-export CONVERGE_DIRECTORY="$HOME/git/converge"
-export CONVERGE_APP="$HOME/git/converge/mobile-app"
+export FASTNED_DIRECTORY="$HOME/git/fastned"
+export FASTNED_APP="$FASTNED_DIRECTORY/fastnedapp"
 
 # cd Aliases
-alias cdc="cd $CONVERGE_DIRECTORY"
-alias cdma="cd $CONVERGE_APP"
+alias cdf="cd $FASTNED_DIRECTORY"
+alias cdma="cd $FASTNED_APP"
 
 # Quick builds
-alias uma="(cd $CONVERGE_APP; npm install; (cd ios; pod install))"
+alias uma="(cd $FASTNED_APP; npm install; (cd ios; pod install))"
 alias ddd="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
-alias sde=". $HOME/git/converge/deploy/set-dev-env.sh"
-alias mks=". $HOME/git/converge/keystore.sh"
 
 # Play a sound (for command completions)"
 alias alert="afplay /System/Library/Sounds/Ping.aiff"
-
-# Call sde and mks so I don't have to on every new terminal..
-#sde
-mks
-
-# Mana AWS
-# alias awsmfa="/Users/matt-dev/git/mana/mana-infra/scripts/aws-mfa.sh matt.lennon"
-# alias db-connect="/Users/matt-dev/git/mana/mana-infra/scripts/db-connect.sh"
-
 
 # Default browser
 alias dbf="osascript $HOME/scripts/mac-os-utils/switch-browser/switch-browser.scpt 'firefox'"
