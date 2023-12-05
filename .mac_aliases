@@ -9,10 +9,12 @@ export FASTNED_APP="$FASTNED_DIRECTORY/fastnedapp"
 # cd Aliases
 alias cdf="cd $FASTNED_DIRECTORY"
 alias cdma="cd $FASTNED_APP"
+alias cdaoc="cd $HOME/git/rust/advent-of-code-2023"
 
 # Quick builds
-alias uma="(cd $FASTNED_APP; npm install; (cd ios; pod install))"
+alias uma="(cd $FASTNED_APP; yarn install; (cd ios; pod install))"
 alias ddd="rm -rf $HOME/Library/Developer/Xcode/DerivedData"
+alias rmpods="(cd ios; rm -rf Pods/)"
 
 # Play a sound (for command completions)"
 alias alert="afplay /System/Library/Sounds/Ping.aiff"
