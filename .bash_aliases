@@ -98,6 +98,9 @@ alias trams="watch -n 15 python $HOME/git/metrolink-next-tram/metrolink.py"
 # no-more-secrets
 alias nms="nms -a -f green"
 
+# Advent of code - new day
+alias newday="sh $HOME/git/rust/advent-of-code-2023/newday.sh"
+
 #### Mac and Linux specific
 if [ "$IS_MACOS" ]
 then
